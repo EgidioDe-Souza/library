@@ -9,6 +9,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
 }
 
 .container {
@@ -59,7 +60,7 @@ th, td {
 }
 
 .book-number {
- background-color: #41444b;
+ background-color: #414b4a;
  color: #f6f4e6;
  width: 5%;
 }

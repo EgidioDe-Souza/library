@@ -14,7 +14,14 @@ addButton.addEventListener('click', () => {
   clearInput();
 });
 
-let myLibrary = [];
+//Allows Books To Be Saved Via Your Local Storage
+
+let myLibrary;
+if (!(localStorage.getItem('library'))) {
+    myLibrary = [];
+} else {
+    myLibrary = JSON.parse(localStorage["library"]);
+}
 
 function Book(author, title, genre, pages, read) {
   this.author = author;
@@ -98,6 +105,7 @@ function updateDisplay() {
     deleteIcon.innerText = 'delete';
     deleteButton.appendChild(deleteIcon);
     deleteCell.appendChild(deleteButton);
+    localStorage.setItem('library', JSON.stringify(myLibrary));
   }
 }
   function clearTable() {
